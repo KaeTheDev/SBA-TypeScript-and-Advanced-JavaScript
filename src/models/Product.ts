@@ -21,7 +21,7 @@ export default class Product {
         }
 
         getPriceWithDiscount(): string {
-            const discount = this.price * (this.discountPercentage / 100);
-            return `$${discount.toFixed(2)}`
+            const discountedPrice = this.price * (this.discountPercentage / 100);
+            return `$${discountedPrice.toFixed(2)}`
         }
 }
