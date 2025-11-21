@@ -30,6 +30,6 @@ export default class Product {
             const taxAmount = calculateTax(this); // returns $ amount taxed
             const finalPrice = discountedPrice + taxAmount;
         
-            return `$${finalPrice.toFixed(2)}`;
+            return `Final Price with Discount: $${finalPrice.toFixed(2)}`;
           }
 }
