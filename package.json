@@ -1,0 +1,17 @@
+{
+  "name": "sba_ts_advjs",
+  "version": "1.0.0",
+  "description": "For this assessment, I built a functional E-commerce Product Management System using TypeScript. The project was completed within a 5.5-hour time limit and demonstrates my ability to work with advanced JavaScript concepts, TypeScript features, object-oriented programming (OOP), asynchronous operations, error handling, and external API interaction.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3"
+  }
+}
