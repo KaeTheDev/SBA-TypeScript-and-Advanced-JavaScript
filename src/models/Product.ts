@@ -20,7 +20,8 @@ export default class Product {
             It costs $${this.price}. And it has a discount percentage of ${this.discountPercentage}.`;
         }
 
-        getPriceWithDiscount(): number {
-            return this.price * this.discountPercentage;
+        getPriceWithDiscount(): string {
+            const discount = this.price * (this.discountPercentage / 100);
+            return `$${discount.toFixed(2)}`
         }
 }
