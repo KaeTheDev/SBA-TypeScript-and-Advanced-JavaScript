@@ -1,3 +1,6 @@
+import calculateTax from "../utils/taxCalculator.js";
+import calculateDiscount from "../utils/discountCalculator.js";
+
 export default class Product {
     id: number;
     title: string;
@@ -21,7 +24,12 @@ export default class Product {
         }
 
         getPriceWithDiscount(): string {
-            const discountedPrice = this.price * (this.discountPercentage / 100);
-            return `$${discountedPrice.toFixed(2)} + ${this.price}`
-        }
+            const discountAmount = calculateDiscount(this); // returns $ amount discounted
+            const discountedPrice = this.price - discountAmount;
+        
+            const taxAmount = calculateTax(this); // returns $ amount taxed
+            const finalPrice = discountedPrice + taxAmount;
+        
+            return `$${finalPrice.toFixed(2)}`;
+          }
 }

@@ -1,6 +1,6 @@
 import type Product from "../models/Product.js";
 
-function calculateTax(product: Product): number {
+export default function calculateTax(product: Product): number {
   let taxPercentage = 4.75 / 100;
 
   if (product.category.toLowerCase() === "groceries") {
