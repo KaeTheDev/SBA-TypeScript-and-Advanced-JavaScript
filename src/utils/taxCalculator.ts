@@ -1,4 +1,4 @@
-import Product from "../models/Product.js";
+import type Product from "../models/Product.js";
 
 function calculateTax(product: Product): number {
   let taxPercentage = 4.75 / 100;
