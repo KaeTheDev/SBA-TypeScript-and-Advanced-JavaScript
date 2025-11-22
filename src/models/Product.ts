@@ -19,7 +19,7 @@ export default class Product {
         }
 
         displayDetails(): string {
-            return `The ${this.title} has an ID of ${this.id}. It's in the category of ${this.category} and can be described as: ${this.description}. 
+            return `The ${this.title} has an ID of ${this.id}. It's in the category of ${this.category} and can be described as: ${this.description} 
             It costs $${this.price}. And it has a discount percentage of ${this.discountPercentage}.`;
         }
 

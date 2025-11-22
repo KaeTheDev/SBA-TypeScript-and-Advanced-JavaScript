@@ -1,12 +1,26 @@
 import Product from "./models/Product.js";
+import { fetchProductData, type APIProduct } from "./services/apiService.js";
 
-const gloss = new Product(4, "Red Lipstick", "The Red Lipstick is a classic and bold choice for adding a pop of color to your lips. With a creamy and pigmented formula, it provides a vibrant and long-lasting finish", "beauty", 12.99, 12.16);
-const food = new Product(16, "Apple","Fresh and crisp apples, perfect for snacking or incorporating into various recipes.", "groceries", 1.99, 12.62);
-
-const products = [gloss, food];
-
-console.log(gloss.displayDetails());
-console.log(gloss.getPriceWithDiscount());
-
-console.log(food.displayDetails());
-console.log(food.getPriceWithDiscount());
+async function processProducts() {
+    const productData = await fetchProductData(); // returning a promise
+  
+    const productInstances: Product[] = productData.products.map(
+      (p: APIProduct) =>
+        new Product(
+          p.id,
+          p.title,
+          p.description,
+          p.category,
+          p.price,
+          p.discountPercentage
+        )
+    );
+  
+    productInstances.forEach((prod: Product) => {
+        // looping through the products and calling the displayDetails and getPriceWithDiscount
+      console.log(prod.displayDetails());
+      console.log(prod.getPriceWithDiscount());
+    });
+  }
+  
+  processProducts();
