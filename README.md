@@ -87,3 +87,17 @@ e-commerce-system/
 │   │   └── taxCalculator.ts
 │   └── main.ts
 └── tsconfig.json
+
+## REFLECTION
+# Write a reflection of roughly 300 words addressing:
+# How you implemented TypeScript features and OOP principles.
+# The challenges you encountered and how you overcame them.
+# How you handled asynchronous operations and error management.
+
+I started by creating the Product.ts class, carefully defining all properties, constructors, and methods. This was essential because the rest of the project relies on Product objects. By using the Product class to represent all items, I applied object-oriented programming principles such as polymorphism, allowing different products to share the same structure and methods while maintaining their own individual data. Additionally, TypeScript’s type system helped ensure that each Product instance adhered to the expected shape, reducing runtime errors and improving code maintainability.
+
+One of the main challenges I faced was testing the Product methods without having an API in place. I initially worked with dummy data to ensure that my methods behaved correctly. Once I added the dummy API, I needed to fetch data asynchronously. I revisited Promises and async/await and realized that async/await is not a replacement for Promises but rather syntactic sugar that simplifies handling asynchronous operations. I started with regular Promises to retrieve the API data, then refactored the code to use async/await for cleaner and more readable logic.
+
+Another challenge involved using the discountCalculator and taxCalculator functions within the Product class without creating a circular dependency. I solved this by importing the Product type in those utility files, which allowed me to reference the class without breaking TypeScript’s module system. To manage potential errors during API calls or calculations, I implemented try/catch blocks, which ensured that any failures were gracefully handled and did not crash the program.
+
+Overall, this project helped me strengthen my understanding of TypeScript’s type system, object-oriented principles like polymorphism, and how to handle asynchronous operations and errors effectively in a real-world scenario.
